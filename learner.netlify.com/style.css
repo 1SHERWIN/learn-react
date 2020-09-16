@@ -1,0 +1,58 @@
+/*Text styling*/
+.row {
+   font-family: Courier;
+  color:white;
+}
+
+/*Header size*/
+h1 {
+  font-weight: bold;
+  color: #fff;
+  font-size: 80px;
+}
+
+/*Top Bottom padding*/
+#tutorButt{
+  margin-top: 150px;
+  margin-bottom: 1000px
+}
+
+/*Bottom padding*/
+#bottomPad{
+  margin-bottom: 500px
+}
+
+/*Tutor Button size*/
+.btn-xl {
+    padding: 18px 163px;
+  
+/*button size variable*/
+    font-size: 80px; 
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+
+/* Chrome10+,Safari5.1+ */
+body {
+  /*Colors*/
+ background: -webkit-linear-gradient(#41f4e2 30%, #41f4e2 30%,#42cef4 60%);
+	-webkit-animation-name: fun-time-awesome;
+	background-size: 1000%;
+	-webkit-animation-name: fun-time-awesome;
+  
+  /*BG Scroll speed*/
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+
+/* Chrome, Safari */
+ /* Scrolling function*/
+@-webkit-keyframes fun-time-awesome {
+  100% {background-position: left bottom;}
+}

@@ -1,0 +1,21 @@
+html{
+	scroll-behavior: smooth;
+}
+body {
+  /*Colors*/
+    margin-top: top;
+ background: -webkit-linear-gradient(#41f4e2 30%, #41f4e2 30%,#42cef4 60%);
+	-webkit-animation-name: fun-time-awesome;
+	background-size: 1000%;
+	-webkit-animation-name: fun-time-awesome;
+  
+  /*BG Scroll speed*/
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+#test{
+	margin-top: 1000px;
+}

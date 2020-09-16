@@ -1,0 +1,155 @@
+<!-- Hue App 2019-01-27 -->
+<!DOCTYPE html>
+<html>
+
+<!-- New Tone function gets the tone from backend -->
+<script>
+	function newTone() { 
+	document.getElementById('tone').style.background = "#41f4e2"; <!-- Backend Interface-->
+	}
+	// setInterval(newTone,1000)
+</script>
+
+<!-- Style -->
+<link rel="stylesheet" href="style.css">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Left Column -->
+<body>
+<div class="row">
+	<div class="column left sidebar">
+        <a href=""><i class="fa fa-fw fa-user"></i> Profile</a>
+        <a href="image/dashboard.png"><i class="fa fa-bar-chart-o"></i> Dashboard</a>
+        <a href="image/settings.png"><i class="fa fa-fw fa-wrench"></i> Services</a>
+        <a href="image/help.png"><i class="fa fa-fw fa-envelope"></i> Help</a>
+    </div>
+</div>
+
+<!-- Status Update Feed -->
+<div class="column middle" id = "tone">
+	<div class="w3-row-padding ">
+		<div class="w3-col m12">
+			<div class="w3-card w3-round w3-white">
+				<div class="w3-container w3-padding">
+					<p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
+					<button type="button" class="w3-button w3-theme" onclick="newTone()"></i> Post</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Most Recent Update-->
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">1 min</span>
+		<h4>John Doe</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+		<div class="w3-row-padding" style="margin:0 -16px">
+		</div>
+	</div>
+
+	<!-- 2nd recent -->
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">16 min</span>
+		<h4>Jane Doe</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<!-- 3rd recent -->
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+	<div class="w3-container w3-card w3-round w3-margin w3-white"><br>
+		<img src="image/boko.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+		<span class="w3-right">32 min</span>
+		<h4>Angie Jane</h4><br>
+		<hr class="w3-clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat.</p>
+	</div>
+
+
+</div> <!-- End Main Column -->
+</body>
+</html>
+
+
+
+
+

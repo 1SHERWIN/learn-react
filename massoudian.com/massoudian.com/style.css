@@ -1,0 +1,70 @@
+
+html, body {
+width: 100%; 
+height: 100%; 
+margin: 0; 
+white-space: nowrap; 
+background-color: lightskyblue; 
+}
+
+h1 {
+margin:10px; 
+}
+
+#ye {
+min-height: 10px; width: 300px; 
+animation: vertical 2s infinite alternate ease-in-out 7ms;
+/*background: silver; */
+}
+#ye::before {
+content: ""; 
+display: inline-block; 
+min-height: 10px; width: 100px; 
+-webkit-animation: vertical 3s infinite alternate ease-out 6ms;
+animation: vertical 2s infinite alternate ease-out 6ms;
+/*background: red; opacity: .5; */
+}
+#ye::after {
+content: ""; 
+display: inline-block; 
+min-height: 10px; width: 100px; 
+-webkit-animation: vertical 9s infinite alternate ease-in 3ms;
+animation: vertical 2s infinite alternate ease-in 3ms;
+/*background: yellow; opacity: .5; */
+}
+
+#equis {
+height: 50px; min-width: 100px; 
+display: inline-block; 
+-webkit-animation: horizontal 11s infinite alternate ease-out 3ms;
+animation: horizontal 10s infinite alternate ease-out 3ms;
+/*background: green; */
+}
+#equis::before {
+content: ""; 
+display: block; 
+height: 20px; width: 100px; 
+-webkit-animation: horizontal 9s infinite alternate ease-in 90ms;
+animation: horizontal 9s infinite alternate ease-in 90ms;
+/*background: red; opacity: .5; */
+}
+#equis::after {
+content: ""; 
+display: block; 
+height: 20px; width: 100px; 
+-webkit-animation: horizontal 7s infinite alternate ease-in-out 70ms;
+animation: horizontal 7s infinite alternate ease-in-out 70ms;
+/*background: blue; opacity: .5; */
+}
+
+@keyframes horizontal {
+ from {min-width: 50px; }
+   to {min-width: 400px; }
+}
+@keyframes vertical {
+ from {min-height: 10px; }
+   to {min-height: 400px; }
+}
+img {
+vertical-align: top; 
+}
