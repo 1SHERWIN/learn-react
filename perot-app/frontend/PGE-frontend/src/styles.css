@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("assets/img/nasa_bg.jpg");
+    background-repeat: no-repeat;
+    position: fixed;
+    background-size: fit;
+    height: 100%;
+    width: 100%;
+   }
+
+/* Color and Border style for jumbotrons/cards */
+.jumbotron-color-border {
+    background-color:grey !important;
+    border: 5px solid transparent ; 
+    border-color:#007bff;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#dino-checkpoint{
+    height: 75px;
+    width: 75px;
+    background-color: transparent;
+    border: 0 !important;
+}
+
+#lungs-checkpoint{
+    height: 90px;
+    width: 95px;
+    background-color: transparent;
+    border: 0 !important;
+}
+
+#football-checkpoint{
+    height: 82px;
+    width: 82px;
+    background-color: transparent;
+    border: 0 !important;
+}
+
+#jewel-checkpoint{
+    height: 72px;
+    width: 72px;
+    background-color: transparent;
+    border: 0 !important;
+}
+
+#spaceship-checkpoint{
+    height: 80px;
+    width: 80px;
+    background-color: transparent;
+    border: 0 !important;
+}
+
+#content {
+    position:relative;
+    background-image: url("assets/img/checkpoints/map_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#content:before, #content:after, #content>:first-child:before, #content>:first-child:after {
+    position:absolute; 
+    content:' ';
+    width:40px; 
+    height: 200px;
+    border-color: #333333; /* or whatever colour */
+    border-style:solid; /* or whatever style */    
+}
+#content:before {top:0;left:0;border-width: 10px 0 0 10px}
+#content:after {top:0;right:0;border-width: 10px 10px 0 0}
+#content>:first-child:before {bottom:0;right:0;border-width: 0 10px 10px 0}
+#content>:first-child:after {bottom:0;left:0;border-width: 0 0 10px 10px}
+
+#progresscontent {
+    position:relative;
+    background-image: url("assets/img/checkpoints/map_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#progresscontent:before, #progresscontent:after, #progresscontent>:first-child:before, #progresscontent>:first-child:after {
+    position:absolute; 
+    content:' ';
+    width:40px; 
+    height: 80px;
+    border-color: #333333; /* or whatever colour */
+    border-style:solid; /* or whatever style */    
+}
+#progresscontent:before {top:0;left:0;border-width: 10px 0 0 10px}
+#progresscontent:after {top:0;right:0;border-width: 10px 10px 0 0}
+#progresscontent>:first-child:before {bottom:0;right:0;border-width: 0 10px 10px 0}
+#progresscontent>:first-child:after {bottom:0;left:0;border-width: 0 0 10px 10px}
+
+
+/* Global Style for Input Fields */
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid white;
+}
+
+::placeholder {
+    color:white;
+    opacity: 1; /* Firefox */
+}
+
+/* For Pop-ups */
+#dialog-container {
+    display: block;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.popper {
+    display: inline-block;
+    background: #eee;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.popper__arrow {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    border: solid 10px transparent;
+  }
+
+/* Responsive Styles */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+}
+
+@media only screen and (min-device-width : 768px) {
+}

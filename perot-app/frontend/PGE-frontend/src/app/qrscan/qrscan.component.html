@@ -1,0 +1,12 @@
+<zxing-scanner (scanSuccess)="onCodeResult($event)" style="width:75%;margin:auto;margin-top:80px;"></zxing-scanner>
+
+<section class="results" *ngIf="checkpoint">
+  <div>
+    <small> You have scanned: </small>
+    <strong>{{ checkpoint }} !</strong>
+  </div>
+</section>
+
+<div class="row justify-content-center text-center" style="margin:5px; margin-top: 20px;">
+  <a routerLink="/progress" routerLinkActive="active"><button type="button" class="btn btn-danger btn-lg btn-block">Return</button></a>
+</div>

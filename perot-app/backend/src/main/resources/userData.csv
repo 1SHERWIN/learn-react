@@ -1,0 +1,8 @@
+session_id, username, checkpoint_1, checkpoint_2, checkpoint_3, checkpoint_4, checkpoint_5, email, completion_status
+1234, john, 1, 1, 1, 1, 0, john@gmail.com, 0
+2345, jane, 1, 1, 1, 1, 1, jane@gmail.com, 1
+3456, bob, 0, 1, 0, 1, 0, bob@gmail.com, 0
+4567, joe, 0, 0, 0, 0, 0, joe@gmail.com, 0
+5678, rob, 1, 1, 1, 1, 1, rob@gmail.com, 1
+6789, lisa, 0, 1, 0, 1, 1, lisa@gmail.com, 0
+7890, jill, 0, 1, 1, 1, 0, jill@gmail.com, 0

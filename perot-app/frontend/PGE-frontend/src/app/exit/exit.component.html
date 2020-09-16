@@ -1,0 +1,38 @@
+
+<div class="justify-content-center text-center">
+    <img src="https://via.placeholder.com/1087x229" style="height:80%;width:80%;margin-top:60px;object-fit:contain;">
+</div>
+
+<div class="row justify-content-center text-center" style="margin-top: 40px;margin-left:auto;margin-right:auto;position:fixed;width:100%;">
+    <div class="justify-content-center text-center" id="accordion" style="width:75%;">
+        <div class="card bg-dark">
+            <p style="font-family: Arial, Helvetica, sans-serif; color:rgb(221, 220, 220); margin-top: 20px; padding: 5px;">
+                Wow, you're a real explorer! Thank you so much for playing! We hope you enjoyed your time at the Perot museum today. 
+                Please enter your email address if you want to be placed in a raffle for free Perot museum tickets. We hope to see you
+                again soon!
+              </p>
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                <button class="btn btn-danger collapsed btn-lg btn-block" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                    Enter Email
+                </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <input type="text" [(ngModel)]='email' placeholder="Enter Your Email ID" style="margin-bottom:10px;width:100%;color:white;">
+                        <button type="button" class="btn btn-danger" (click)="onEmailCheck()">
+                        <span class="h3"> Enter </span>
+                        </button>
+                </div>
+            </div>
+            <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-danger collapsed btn-lg btn-block" (click)="goToUrl()" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                    Exit
+                </button>
+            </h5>
+        </div>
+        </div>
+    </div>
+</div>

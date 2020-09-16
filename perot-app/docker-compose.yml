@@ -1,0 +1,28 @@
+version: '3'
+services: 
+    web:
+        build: frontend/PGE-frontend
+        ports:
+            - "4200:4200"
+        volumes:
+            - ./frontend/PGE-frontend:/app
+            - /app/node_modules
+    db:
+        build: database
+        ports:
+            - "3306:3306"
+        volumes:
+            - perot_db:/var/lib/mysql
+            - ./backend/src/main/resources/nameGeneration:/tmp/database/data_files
+    api:
+        build: backend
+        depends_on:
+            - db
+        ports:
+            - "8080:8080"
+        volumes:
+            - /java/springboot-app
+
+volumes:
+    perot_db:
+        
