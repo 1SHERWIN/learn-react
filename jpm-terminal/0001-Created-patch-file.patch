@@ -1,0 +1,172 @@
+From e63a7aa3d50ebd4156f809548e5d973263a9283d Mon Sep 17 00:00:00 2001
+From: Sherwin <the1sherwin@gmil.com>
+Date: Thu, 30 Jul 2020 09:28:41 -0500
+Subject: [PATCH] Created patch file
+
+---
+ src.zip       | Bin 0 -> 4377 bytes
+ src/App.tsx   |  16 ++++++++++++++--
+ src/Graph.tsx |   4 ++--
+ 3 files changed, 16 insertions(+), 4 deletions(-)
+ create mode 100644 src.zip
+
+diff --git a/src.zip b/src.zip
+new file mode 100644
+index 0000000000000000000000000000000000000000..4c24157a462a0b29d4f1eb5d13dc6445ab2f2f13
+GIT binary patch
+literal 4377
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/App.tsx b/src/App.tsx
+index 0728518..12473e4 100755
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -8,6 +8,7 @@ import './App.css';
+  */
+ interface IState {
+   data: ServerRespond[],
++  showGraph: boolean
+ }
+ 
+ /**
+@@ -22,6 +23,7 @@ class App extends Component<{}, IState> {
+       // data saves the server responds.
+       // We use this state to parse data down to the child element (Graph) as element property
+       data: [],
++      showGraph: false
+     };
+   }
+ 
+@@ -29,18 +31,28 @@ class App extends Component<{}, IState> {
+    * Render Graph react component with state.data parse as property data
+    */
+   renderGraph() {
+-    return (<Graph data={this.state.data}/>)
++    if (this.state.showGraph) {
++      return (<Graph data={this.state.data}/>)
++    }
+   }
+ 
+   /**
+    * Get new data from server and update the state with the new data
+    */
+   getDataFromServer() {
++    let x = 0;
++    const interval = setInterval(() => {
+     DataStreamer.getData((serverResponds: ServerRespond[]) => {
+       // Update the state by creating a new array of data that consists of
+       // Previous data in the state and the new data from server
+-      this.setState({ data: [...this.state.data, ...serverResponds] });
++      this.setState({ data: serverResponds, showGraph: true
++      
++      });
+     });
++    x++;
++    if (x>1000) {clearInterval(interval);}
++
++  },100);
+   }
+ 
+   /**
+diff --git a/src/Graph.tsx b/src/Graph.tsx
+index ec1430e..6d6693c 100644
+--- a/src/Graph.tsx
++++ b/src/Graph.tsx
+@@ -14,7 +14,7 @@ interface IProps {
+  * Perspective library adds load to HTMLElement prototype.
+  * This interface acts as a wrapper for Typescript compiler.
+  */
+-interface PerspectiveViewerElement {
++interface PerspectiveViewerElement extends HTMLElement {
+   load: (table: Table) => void,
+ }
+ 
+@@ -32,7 +32,7 @@ class Graph extends Component<IProps, {}> {
+ 
+   componentDidMount() {
+     // Get element to attach the table from the DOM.
+-    const elem: PerspectiveViewerElement = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
++    const elem = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
+ 
+     const schema = {
+       stock: 'string',
+-- 
+2.27.0.windows.1
+
