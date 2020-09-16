@@ -1,0 +1,10 @@
+var input_field = document.getElementById('gallons');
+console.log("hello world")
+input_field.addEventListener('change', function() {
+    var v = parseFloat(this.value);
+    if (isNaN(v)) {
+        this.value = '';
+    } else {
+        this.value = v.toFixed(2);
+    }
+});

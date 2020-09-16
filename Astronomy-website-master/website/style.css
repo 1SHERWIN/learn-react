@@ -1,0 +1,77 @@
+/* Sherwin */
+
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ body{-webkit-text-size-adjust: 100%;}}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ body{-webkit-text-size-adjust: 100%;}}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ body{-webkit-text-size-adjust: 100%;}}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ body{-webkit-text-size-adjust: 100%;}}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ body{-webkit-text-size-adjust: 100%;}}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ body{-webkit-text-size-adjust: 100%;}}
+
+
+body {
+    background-color: #000063;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+h1 {
+	margin: 1;
+}
+h2, h3 {
+    margin: 0;
+}
+
+#nav ul {
+    list-style-type: none;
+    padding: 0px;
+}
+#header {
+    padding: 10px;
+    background-color: #6CF;
+    color: white;
+    text-align: center;
+}
+
+#container {
+    background-color: white;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content {
+    padding: 10px;
+}
+
+#nav {
+    width: 180px;
+    float: left;
+}
+
+#main {
+    width: 600px;
+    float: right;
+}
+
+#timeline {
+	
+	white-space: pre-wrap;
+	
+}
+
+#footer {
+    clear: both;
+    padding: 0px;
+    background-color: #999;
+    color: white;
+    text-align: right;
+}
+
+#nav .selected {
+    font-weight: bold;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<title>Quote History</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style type="text/css">
+
+    .w3-content.w3-top {
+        margin-top: 30px;
+        float: left;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 250px; /* Height of the footer */
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Client Info</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="header_footer.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</head>
+
+<script>
+
+
+</script>
+<body>
+
+<div class="w3-top">
+
+    <div class="w3-bar" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+           onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="home" class="w3-bar-item w3-button">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+        <a href="#quote" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> REQUEST QUOTE</a>
+        <a href="client_info" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-card"></i> CLIENT
+            INFORMATION</a>
+        <a href="quote_history" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calendar"></i> QUOTE HISTORY</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+        <a href="#quote" class="w3-bar-item w3-button" onclick="toggleFunction()">REQUEST QUOTE</a>
+        <a href="#history" class="w3-bar-item w3-button" onclick="toggleFunction()">QUOTE HISTORY</a>
+        <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+        <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+    </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1-client" style="background-color:white">
+    <div class="w3-topmiddle" style="white-space:nowrap;">
+
+        <!-- Container (Client Information Section) -->
+        <div class="w3-content w3-top" style="margin-left: 10px" id="client">
+            <h3 class="w3-left" style="margin-left: 10px">QUOTE HISTORY</h3>
+            <div class="w3-row w3-padding-10 w3-section">
+                <div class="w3-col w3-panel">
+                    <table id="quote_history_table" cellpadding="10"
+                           style="width:100%; margin-left: -15px; text-align: left">
+                        <tr>
+                            <th>Item #</th>
+                            <th>Request Date</th>
+                            <th>Delivery Date</th>
+                            <th>Gallons</th>
+                            <th>Rate</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+            </div>
+            <div class="w3-display-bottom" style="white-space:nowrap;">
+                <a href="index.html" class="w3-button w3-padding-large w3-light-grey w3-hover-red w3-center"
+                   style="margin-top:20px; margin-left:10px; width:40%">CLOSE</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                     class="w3-hover-text-green">w3.css</a></p>
+</footer>
+<script>
+    $(document).ready(function () {
+        $.getJSON("quote_history.json", function (data) {
+            var quote_history_data = '';
+            $.each(data, function (key, value) {
+                quote_history_data += '<tr>';
+                quote_history_data += '<td>' + value.itemId + '</td>';
+                quote_history_data += '<td>' + value.request + '</td>';
+                quote_history_data += '<td>' + value.delivery + '</td>';
+                quote_history_data += '<td>' + value.gallons + '</td>';
+                quote_history_data += '<td>' + value.rate + '</td>';
+                quote_history_data += '<td>' + value.total + '</td>';
+                quote_history_data += '<tr>';
+            });
+            $('#quote_history_table').append(quote_history_data);
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

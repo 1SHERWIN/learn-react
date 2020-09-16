@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<title>Fuel Cost Estimator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<style>
+  body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+  }
+
+  body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+  }
+
+  /* Create a Parallax Effect */
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* First image (Logo. Full height) */
+  .bgimg-1 {
+    background-color: #cccccc;
+    background-image: radial-gradient(red, yellow);
+    min-height: 4%;
+  }
+
+  .w3-hover-opacity {
+    cursor: pointer;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+</style>
+
+
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top bgimg-1">
+
+  <div class="w3-bar w3-mobile " id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+       onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="{{ url_for('home') }}" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#{{ url_for('home',_anchor='quote') }}" class="w3-bar-item w3-button w3-hide-small"><i
+      class="fa fa-th"></i> REQUEST QUOTE</a>
+    <a href="{{ url_for('client_info') }}" class="w3-bar-item w3-button w3-hide-small"><i
+      class="fa fa-address-card"></i> CLIENT INFORMATION</a>
+    <a href="{{ url_for('quote_history') }}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calendar"></i>
+      QUOTE HISTORY</a>
+    <a href="{{ url_for('home',_anchor='contact') }}" class="w3-bar-item w3-button w3-hide-small"><i
+      class="fa fa-envelope"></i> CONTACT</a>
+
+
+    <a href="{{ url_for('logout') }}" class="w3-right w3-bar-item w3-button w3-hide-small"><i
+      class="fa fa-sign-out"></i> LOGOUT</a>
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('login') }}"
+         class="w3-right w3-bar-item w3-button w3-hide-small"><i></i>Hello, {{ current_user.username }}</a>
+    {% else %}
+      <a href="{{ url_for('login') }}" class="w3-right w3-bar-item w3-button w3-hide-small"><i
+        class="fa fa-sign-in"></i> LOGIN</a>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Container (Client Information Section) -->
+<div class="w3-content  w3-display-container w3-padding-64" id="clientinfo">
+  <h2 class="w3-center">CLIENT INFORMATION</h2>
+  <div class="container">
+    <form name="client-info" method="POST" action="/client_info">
+      {% if result %}
+        {% for client in result %}
+          <div class="row">
+            <div class="col-25">
+              <label for="name"> Name </label>
+            </div>
+            <div class="col-75">
+              <input type="hidden" id="old_name" name="old_name" value="{{ client.fullName }}">
+              <input type="text" id="new_name" name="new_name" value="{{ client.fullName }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="address"> Address </label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="address" value="{{ client.address }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="city"> City </label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="city" value="{{ client.city }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="state"> State </label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="state" value="{{ client.state }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="zipcode"> ZipCode </label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="state" value="{{ client.zipCode }}">
+            </div>
+          </div>
+          <div class=w3-display-bottommiddle>
+            <input type="submit" class="w3-display-bottom w3-section w3-button w3-black ">
+            <i class="fa fa-paper-plane"></i> EDIT>
+            <a href="{{ url_for('delete_client') }}" class="w3-display-bottom w3-section w3-button w3-black ">
+              <i class="fa fa-paper-plane"></i> DELETE</a>
+
+          </div>
+
+        {% endfor %}
+      {% endif %}
+
+
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-bottom w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                   class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "historyId": "100",
+    "itemId": "654321",
+    "request": "09/18/2018",
+    "delivery": "09/20/2018",
+    "gallons": "100",
+    "rate": "2.55",
+    "total": "255"
+  },
+  {
+    "historyId": "200",
+    "itemId": "123456",
+    "request": "09/18/2018",
+    "delivery": "09/20/2018",
+    "gallons": "100",
+    "rate": "2.55",
+    "total": "255"
+  },
+  {
+    "historyId": "300",
+    "itemId": "112233",
+    "request": "09/18/2018",
+    "delivery": "09/20/2018",
+    "gallons": "100",
+    "rate": "2.55",
+    "total": "255"
+  }
+]
+

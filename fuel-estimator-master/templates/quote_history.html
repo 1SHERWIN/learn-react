@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<title>Fuel Cost Estimator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<style>
+  body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+  }
+
+  body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+  }
+
+  /* Create a Parallax Effect */
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* First image (Logo. Full height) */
+  .bgimg-1 {
+    background-color: #cccccc;
+    background-image: radial-gradient(red, yellow);
+    min-height: 4%;
+  }
+
+  .w3-hover-opacity {
+    cursor: pointer;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  /* Table and row */
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  th {
+    background-color: darkgray;
+    color: white;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+  }
+</style>
+
+
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top bgimg-1">
+
+  <div class="w3-bar w3-mobile " id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+       onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="{{ url_for('home') }}" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#quote" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> REQUEST QUOTE</a>
+    <a href="{{ url_for('client_info') }}" class="w3-bar-item w3-button w3-hide-small"><i
+      class="fa fa-address-card"></i>
+      CLIENT
+      INFORMATION</a>
+    <a href="{{ url_for('quote_history') }}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calendar"></i>
+      QUOTE
+      HISTORY</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+
+
+    <a href="{{ url_for('logout') }}" class="w3-right w3-bar-item w3-button w3-hide-small"><i
+      class="fa fa-sign-out"></i> LOGOUT</a>
+
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('login') }}"
+         class="w3-right w3-bar-item w3-button w3-hide-small"><i></i>Hello, {{ current_user.username }}</a>
+    {% else %}
+      <a href="{{ url_for('login') }}" class="w3-right w3-bar-item w3-button w3-hide-small"><i
+        class="fa fa-sign-in"></i> LOGIN</a>
+    {% endif %}
+  </div>
+</div>
+
+
+<!-- Container (Quote History Section) -->
+
+
+<div class="w3-display-container w3-padding-64" id="clientinfo">
+  <h2 class="w3-center">QUOTE HISTORY</h2>
+  <div class="w3-display-container">
+    <div style="overflow-x:auto;">
+      <table class="w3-table" id="quote history">
+        {% if result %}
+          <tr>
+            <th>Quote ID</th>
+            <th>Client ID</th>
+            <th>Gallons Requested</th>
+            <th>Request Date</th>
+            <th>Delivery Date</th>
+            <th>Delivery Address</th>
+            <th>Delivery City</th>
+            <th>Delivery State</th>
+            <th>Delivery Zipcode</th>
+            <th>Contact Name</th>
+            <th>Contact Phone</th>
+            <th>Contact Email</th>
+            <th>Suggested Price</th>
+            <th>Total Amount Due</th>
+
+          </tr>
+          {% for row in result %}
+            <tr>
+              <td> {{ row.quoteId }}</td>
+              <td> {{ row.clientId }}</td>
+              <td> {{ row.gallonsRequested }}</td>
+              <td> {{ row.requestDate }}</td>
+              <td> {{ row.deliveryDate }}</td>
+              <td> {{ row.deliveryAddress }}</td>
+              <td> {{ row.deliveryCity }}</td>
+              <td> {{ row.deliveryState }}</td>
+              <td> {{ row.deliveryZipCode }}</td>
+              <td> {{ row.deliveryContactName }}</td>
+              <td> {{ row.deliveryContactPhone }}</td>
+              <td> {{ row.deliveryContactEmail }}</td>
+              <td> {{ row.suggestedPrice }}</td>
+              <td> {{ row.totalAmountDue }}</td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+      </table>
+    </div>
+  </div>
+</div>
+<div class="w3-display-container" id="footer">
+  <!-- Footer -->
+  <footer class="w3-bottom w3-center w3-black w3-opacity w3-padding-30 w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                     class="w3-hover-text-green">w3.css</a></p>
+  </footer>
+</div>
+
+</body>
+

@@ -1,0 +1,16 @@
+{
+  "clientinfo": [
+    {
+      "name": "Macy Gray",
+      "address": "123 Anywhere Lane",
+      "phone": "512-555-5555",
+      "email": "mg1@gmail.com"
+    },
+    {
+      "name": "Kitty Kat",
+      "address": "123 Anywhere Lane",
+      "phone": "512-555-5556",
+      "email": "kk1@gmail.com"
+    }
+  ]
+}
